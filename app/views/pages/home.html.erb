@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html>
 
-  <!-- Banner -->
+<!-- Banner -->
 
- <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,0,0,0.6) 60%), url('<%= image_path 'boat.jpg' %>');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,0,0,0.6) 60%), url('<%= image_path 'boat.jpg' %>');">
 
-    <div class="col-1-1">
-      <div class="row">
-        <div class="banner-content">
-          <h1>Rent a boat, ¡Easy & Safe!</h1>
-          <h2>Your best choice!</h2>
+  <div class="col-1-1">
+    <div class="row">
+      <div class="banner-content">
+        <h1>Rent a boat, ¡Easy & Safe!</h1>
+        <h2>Your best choice!</h2>
 
-        </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- cards -->
+<!-- cards -->
+<span> <h3> Our boats </h3></span>
 
 <div class= "container">
+  <div class="row">
 
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Le Wagon Shanghai</h2>
-    <p>Very cool city, the best</p>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'cardboat.jpg' %>');">
+      <div class="card-category">Popular</div>
+      <div class="card-description">
+        <h2>Yacht</h2>
+        <p>Very cool ride, the best</p>
+      </div>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      <a class="card-link" href="#" ></a>
+    </div>
+
+
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'cardboat.jpg' %>');">
+      <div class="card-category"></div>
+      <div class="card-description">
+        <h2>Sailboat</h2>
+        <p>Very cool ride, the best</p>
+      </div>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      <a class="card-link" href="#" ></a>
+    </div>
+
+
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'cardboat.jpg' %>');">
+      <div class="card-category"></div>
+      <div class="card-description">
+        <h2>Launch</h2>
+        <p>Very cool ride, the best</p>
+      </div>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      <a class="card-link" href="#" ></a>
+    </div>
+
+
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'cardboat.jpg' %>');">
+      <div class="card-category"></div>
+      <div class="card-description">
+        <h2>Canoes</h2>
+        <p>Very cool ride, the best</p>
+      </div>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      <a class="card-link" href="#" ></a>
+    </div>
+
   </div>
-  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-  <a class="card-link" href="#" ></a>
-</div>
-</div>
 
+
+ <!-- footer -->
 </div>
 <%= render "footer" %>
-  <!-- footer -->
-
-
 </body>
 
