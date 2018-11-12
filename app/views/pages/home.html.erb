@@ -16,59 +16,64 @@
   </div>
 </div>
 
+
 <!-- cards -->
 <span> <h3> Our boats </h3></span>
 
-<div class= "container">
+<div class= "container" style="background-image: url("");">
   <div class="row">
 
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'cardboat.jpg' %>');">
-      <div class="card-category">Popular</div>
-      <div class="card-description">
-        <h2>Yacht</h2>
-        <p>Very cool ride, the best</p>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'yacht.jpg' %>');">
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2> Bob's Yacht</h2>
+          <p>Very cool ride, the best</p>
+        </div>
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <a class="card-link" href="#" ></a>
       </div>
-      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-      <a class="card-link" href="#" ></a>
     </div>
 
-
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'cardboat.jpg' %>');">
-      <div class="card-category"></div>
-      <div class="card-description">
-        <h2>Sailboat</h2>
-        <p>Very cool ride, the best</p>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'sail-boat.jpg' %>');">
+        <div class="card-category"></div>
+        <div class="card-description">
+          <h2>Arnold's Sailboat</h2>
+          <p>Very cool ride, the best</p>
+        </div>
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large">
+        <a class="card-link" href="#" ></a>
       </div>
-      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-      <a class="card-link" href="#" ></a>
     </div>
 
-
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'cardboat.jpg' %>');">
-      <div class="card-category"></div>
-      <div class="card-description">
-        <h2>Launch</h2>
-        <p>Very cool ride, the best</p>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'launch2.jpg' %>');">
+        <div class="card-category"></div>
+        <div class="card-description">
+          <h2>Patricia's Launch</h2>
+          <p>Very cool ride, the best</p>
+        </div>
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/ClaraMorgen">
+        <a class="card-link" href="#" ></a>
       </div>
-      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-      <a class="card-link" href="#" ></a>
     </div>
 
-
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'cardboat.jpg' %>');">
-      <div class="card-category"></div>
-      <div class="card-description">
-        <h2>Canoes</h2>
-        <p>Very cool ride, the best</p>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'canoes2.jpg' %>');">
+        <div class="card-category"></div>
+        <div class="card-description">
+          <h2>Elvis Canoes</h2>
+          <p>Very cool ride, the best</p>
+        </div>
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/krokrob' class="avatar-bordered">
+        <a class="card-link" href="#" ></a>
       </div>
-      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-      <a class="card-link" href="#" ></a>
     </div>
-
   </div>
 
 
- <!-- footer -->
+  <!-- footer -->
 </div>
 <%= render "footer" %>
 </body>
