@@ -97,22 +97,26 @@ a {
     h2 {
      color:white;
      font-size: 20px;
-     text-align: center;
    }
  }
 
+// .item {
+//   height: 90vh;
+// }
+
+
  .carousel-caption{
-  h1{
+
+  h1 {
     color:white;
      font-size: 30px;
      text-align: center;
-     background-position:center;
+     text-shadow: 1px 1px 1px #000;
   }
-  h2{
+  h2 {
     color:white;
-     font-size: 20px;
+     font-size: 30px;
      text-align: center;
-     background-position:center;
   }
  }
 
