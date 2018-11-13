@@ -1,16 +1,17 @@
 
-   <div class="navbar">
-      <header>
-        <img class="menu" src='<%= image_path 'boat (1).png' %>' />
-        <!-- <img src="boat (1).png" > -->
-        <h2 class="menu"><b>Le</b>Bateau</h2>
-        <nav class="menu">
-          <span class="menu2"><a href="#">Log In</a></span>
-           <span class="menu2"><a href="#">Upload a boat</a></span>
+<div class="navbar">
+  <header>
+    <%= link_to root_path do %>
+    <img class="menu" src='<%= image_path 'boat (1).png' %>' />
+    <h2 class="menu"><b>Le</b>Bateau</h2>
+    <% end %>
+    <nav class="menu">
+      <span class="menu2"><%= link_to "Log In", new_user_session_path %></span>
+      <span class="menu2"><%= link_to "Upload a boat", new_boat_path %></span>
 
-        </nav>
+    </nav>
 
-<!-- Profile picture with dropdown list -->
+    <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <img src='<%= image_path 'menu.png' %>' class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
@@ -19,16 +20,16 @@
           <li><a href="#">Dashboard</a></li>
           <li><a href="#">Help</a></li>
           <li><a href="#">Rent a boat</a></li>
-          <li><a href="#">Upload a boat</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li><%= link_to "Upload a boat", new_boat_path %></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
     </div>
   </div>
 
-        <nav class="mobile">
-          <a href="#"><img src="https://s3.us-east-2.amazonaws.com/ajpics/codecademy+capstone/ic-login.svg" alt="Log-In"></a>
-        </nav>
+  <nav class="mobile">
+    <a href="#"><img src="https://s3.us-east-2.amazonaws.com/ajpics/codecademy+capstone/ic-login.svg" alt="Log-In"></a>
+  </nav>
 
-      </header>
-    </div>
+</header>
+</div>

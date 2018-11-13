@@ -1,5 +1,5 @@
 class BoatsController < ApplicationController
- skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @boats = Boat.all
@@ -29,5 +29,4 @@ class BoatsController < ApplicationController
   def boat_params
     params.require(:boat).permit(:name, :boat_type, :size, :capacity, :price, :photo) # this is called strong params, for security
   end
-
 end
