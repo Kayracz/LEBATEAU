@@ -9,6 +9,7 @@ header {
   background-color: white;
 }
 
+
 header img {
   height: 32px;
   padding-left: 24px;
@@ -33,6 +34,11 @@ h3{
   font-size: 20px;
 }
 
+
+span{
+  color: #0E8363;
+
+}
 a:hover {
   font-weight: bold;
   transition:font-weight 0.3s ease 0s;
@@ -46,6 +52,10 @@ a {
   text-decoration: none;
 }
 
+.menu{
+  color: #0E8363;
+  border-color: black;
+}
 
 .button:hover {
   color: black;
@@ -66,7 +76,7 @@ a {
   .banner {
     color: white;
     text-align: center;
-    height: 100vh;
+    height: 40vh;
     background-size: cover !important;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -77,17 +87,44 @@ a {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background-position: center
+    background-position: center;
+    text-shadow: 1px 1px 1px #000;
+    margin-top: 20px;
   }
 
 
   .banner-content {
-    color: white;
-    h2{
+    h2 {
      color:white;
      font-size: 20px;
    }
  }
+
+// .item {
+//   height: 90vh;
+// }
+
+
+ .carousel-caption{
+
+  h1 {
+    color:white;
+     font-size: 30px;
+     text-align: center;
+     text-shadow: 1px 1px 1px #000;
+     text-border: black;
+  }
+  h2 {
+    color:white;
+     font-size: 30px;
+     text-align: center;
+     text-border: black;
+  }
+ }
+
+ .carousel-inner{
+ }
+
 
  .card {
   height: 175px;
@@ -129,7 +166,7 @@ a {
 }
 .card-description p {
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 0.1;
   font-weight: lighter;
 }
 .card-link {
@@ -144,4 +181,90 @@ a {
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.footer {
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: #0E8363;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+
+.footer-copyright{
+  font-size: 12px;
+  color: #0E8363;
+}
+
+
+
+
+// search bar
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid #0E8363;
+  padding: 2px;
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #0E8363;
+}
+
+.searchButton {
+  position: absolute;
+  right: -50px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #0E8363;
+  background: #0E8363;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
