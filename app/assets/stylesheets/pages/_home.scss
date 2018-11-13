@@ -112,13 +112,19 @@ a {
      font-size: 30px;
      text-align: center;
      text-shadow: 1px 1px 1px #000;
+     text-border: black;
   }
   h2 {
     color:white;
      font-size: 30px;
      text-align: center;
+     text-border: black;
   }
  }
+
+ .carousel-inner{
+ }
+
 
  .card {
   height: 175px;
