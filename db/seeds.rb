@@ -11,7 +11,7 @@ require 'faker'
 boat_attr = {
 name: Faker::HitchhikersGuideToTheGalaxy.planet,
 model: Faker::HitchhikersGuideToTheGalaxy.starship,
-size: rand(33..100),
+size: rand(1..250),
 capacity: rand(4..16),
 price: rand(200..500)
 }
