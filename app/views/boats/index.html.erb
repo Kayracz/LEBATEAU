@@ -73,61 +73,42 @@
 </div>
 
 
-<!-- cards -->
 <span> <h3> <strong>O</strong>ur <strong>b</strong>oats </h3></span>
 
+<!-- cards -->
 <div class= "container">
   <div class="row">
-
+    <% @boats.each do |boat| %>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'yacht.jpg' %>');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2> Bob's Yacht</h2>
-          <p>Very cool ride, the best</p>
+
+      <%= link_to boat_path(boat) do %>
+      <% if boat.photo.present? %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo %>');">
+
+       <% else %>
+       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_tag("pyyi0a6yphaudutusmcr")%>');">
+         <% end %>
+
+         <div class="card-category"></div>
+         <div class="card-description">
+          <h2><%= boat.name %></h2>
+          <p><%= boat.boat_type %></p>
         </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <a class="card-link" href="#" ></a>
+        <!--profile user change in each card
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large">
+      -->
       </div>
     </div>
-
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'sail-boat.jpg' %>');"> <div class="card-category"></div>
-      <div class="card-description">
-        <h2>Arnold's Sailboat</h2>
-        <p>Very cool ride, the best</p>
-      </div>
-      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large">
-      <a class="card-link" href="#" ></a>
-    </div>
+    <% end %>
   </div>
-
-  <div class="col-xs-12 col-sm-6 col-md-3">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'launch2.jpg' %>');">
-      <div class="card-category"></div>
-      <div class="card-description">
-        <h2>Patricia's Launch</h2>
-        <p>Very cool ride, the best</p>
-      </div>
-      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/ClaraMorgen">
-      <a class="card-link" href="#" ></a>
-    </div>
-  </div>
-
-  <div class="col-xs-12 col-sm-6 col-md-3">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'canoes6.jpg' %>');">
-      <div class="card-category"></div>
-      <div class="card-description">
-        <h2>Elvis Canoes</h2>
-        <p>Very cool ride, the best</p>
-      </div>
-      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/krokrob' class="avatar-bordered">
-      <a class="card-link" href="#" ></a>
-    </div>
-  </div>
+  <% end %>
 </div>
+</div>
+
+
 
 
 <!-- footer -->
 </div>
 <%= render "pages/footer" %>
+
