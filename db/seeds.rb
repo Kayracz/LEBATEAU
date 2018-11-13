@@ -18,7 +18,8 @@ User.all.each do |user|
       boat_type: "Yatch",
       size: i,
       capacity: (i * 10),
-      price:  (i * 20)
+      price:  (i * 20),
+      remote_photo_url: "https://picsum.photos/200/300/?random"
     )
   end
 end
