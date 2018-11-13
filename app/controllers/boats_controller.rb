@@ -26,7 +26,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :boat_type, :size, :capacity, :price) # this is called strong params, for security
+    params.require(:boat).permit(:name, :boat_type, :size, :capacity, :price, :photo) # this is called strong params, for security
   end
 
 end
