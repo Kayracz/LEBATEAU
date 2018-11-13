@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Boat.create(size: "less than 15 feet")
+Boat.create(size: "15-35 feet")
+Boat.create(size: "35-60 feet")
+Boat.create(size: "60-120 feet")
+Boat.create(size: "35-60 feet")
+Boat.create(size: "120+ feet")
