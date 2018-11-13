@@ -1,7 +1,5 @@
 class BoatsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index]
-
 
   def index
     @boats = Boat.all
@@ -9,6 +7,7 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
+    @bookings = Booking.where(boat: params[:id])
   end
 
   def new
