@@ -6,6 +6,7 @@ skip_before_action :authenticate_user!, only: [:index]
   end
 
   def show
+    @boat = Boat.find(params[:id])
   end
 
   def new
