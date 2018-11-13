@@ -6,7 +6,8 @@
     <h2 class="menu"><b>Le</b>Bateau</h2>
     <% end %>
     <nav class="menu">
-      <span class="menu2"><%= link_to "Log In", new_user_session_path %></span>
+
+      <span class="menu2"><%= link_to "Log In/Signup", new_user_session_path %></span>
       <span class="menu2"><%= link_to "Upload a boat", new_boat_path %></span>
 
     </nav>
@@ -16,10 +17,8 @@
       <div class="dropdown">
         <img src='<%= image_path 'menu.png' %>' class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
           <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">Rent a boat</a></li>
+
           <li><%= link_to "Upload a boat", new_boat_path %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
         </ul>
