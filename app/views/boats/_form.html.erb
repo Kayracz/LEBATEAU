@@ -1,0 +1,9 @@
+<%= simple_form_for @boat do |f| %>
+  <%= f.input :name, label: 'Boat name:' %>
+  <%= f.input :boat_type, label: 'Boat type:' %>
+  <%= f.input :size, label: 'Boat size:' %>
+  <%= f.input :capacity, label: 'Boat capacity:' %>
+  <%= f.input :price, label: 'Boat price:' %>
+
+  <%= f.button :submit %>
+<% end %>

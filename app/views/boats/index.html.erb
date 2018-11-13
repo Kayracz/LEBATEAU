@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-
 <!-- Banner -->
 
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,0,0,0.6) 60%), url('<%= image_path 'boat.jpg' %>');">
@@ -13,6 +10,25 @@
 
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Nick testing -->
+
+<div class="container">
+  <div class="row">
+  <div class="row">
+    <% @boats.each do |boat| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('paperboat.jpg') %> );">
+          <div class="card-description">
+            <h2><%= "#{boat.name}" %></h2>
+          </div>
+          <a class="btn btn-primary btn-lg" href= <%= boat_path(boat) %> >Recipe</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
   </div>
 </div>
 
@@ -71,9 +87,3 @@
       </div>
     </div>
   </div>
-
-
-  <!-- footer -->
-</div>
-<%= render "footer" %>
-</body>
