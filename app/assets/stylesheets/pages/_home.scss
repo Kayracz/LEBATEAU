@@ -34,6 +34,11 @@ h3{
   font-size: 20px;
 }
 
+
+span{
+  color: #0E8363;
+
+}
 a:hover {
   font-weight: bold;
   transition:font-weight 0.3s ease 0s;
@@ -89,9 +94,9 @@ a {
 
 
   .banner-content {
-    h2{
+    h2 {
      color:white;
-     font-size: 18px;
+     font-size: 20px;
      text-align: center;
    }
  }
@@ -198,4 +203,58 @@ a {
 .footer-copyright{
   font-size: 12px;
   color: #0E8363;
+}
+
+
+
+
+// search bar
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid #0E8363;
+  padding: 2px;
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #0E8363;
+}
+
+.searchButton {
+  position: absolute;
+  right: -50px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #0E8363;
+  background: #0E8363;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
