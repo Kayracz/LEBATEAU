@@ -5,9 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Boat.create(size: "less than 15 feet")
-Boat.create(size: "15-35 feet")
-Boat.create(size: "35-60 feet")
-Boat.create(size: "60-120 feet")
-Boat.create(size: "35-60 feet")
-Boat.create(size: "120+ feet")
+require 'faker'
+
+
+boat_attr = {
+name: Faker::HitchhikersGuideToTheGalaxy.planet,
+model: Faker::HitchhikersGuideToTheGalaxy.starship,
+size: rand(33..100),
+capacity: rand(4..16),
+price: rand(200..500)
+}
+
+
+10.times  do
+  boat = Boat.create(boat_attr)
+  boat.save
+end
