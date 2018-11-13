@@ -19,6 +19,7 @@ User.all.each do |user|
       size: i,
       capacity: (i * 10),
       price:  (i * 20),
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quae, consequuntur nobis voluptatibus sunt est laborum tenetur harum molestiae consequatur, velit nemo. Optio reprehenderit ratione dolor ex sint natus iste."
       remote_photo_url: "https://picsum.photos/200/300/?random"
     )
   end
