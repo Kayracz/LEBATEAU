@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :boats, only: [:show, :new, :create] do
-    resources :bookings, only: [:new, :create, :edit, :update]
+    resources :bookings, only: [:show, :new, :create, :edit, :update]
   end
 
   resources :bookings, only: [:destroy]
