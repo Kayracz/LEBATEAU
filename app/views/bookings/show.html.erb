@@ -1,17 +1,27 @@
-<img src="https://res.cloudinary.com/deruwllkv/image/upload/v1542141008/ijsgysweef7iiagibbbm.svg" alt="confirmation tick">
+<div class = 'wrapper-Nick'>
+  <div class = 'container-Nick'>
 
-<p>Booking confirmed</p>
+    <img id="tick-Nick" src="https://res.cloudinary.com/deruwllkv/image/upload/v1542141008/ijsgysweef7iiagibbbm.svg" alt="confirmation tick">
 
-<p>Boat name:</p>
+    <p><strong>Booking confirmed</strong></p>
 
-<%= @booking.boat.name %>
+    <p class='green-Nick' >Boat name:</p>
+    <p class='black-Nick'><%= @booking.boat.name %></p>
 
-<p>Start date:</p>
+    <p class='green-Nick' >Start date:</p>
+    <p class='black-Nick'><%= @booking.start_date.change({ hour: 9, min: 0}) %></p>
 
-<%= @booking.start_date %>
+    <p class='green-Nick' >End date:</p>
+    <p class='black-Nick'><%= @booking.end_date.change({ hour: 17, min: 0}) %></p>
 
-<p>End date:</p>
+    <!-- <p><%= link_to "Back to home", root_path %></p> -->
+    <a class="btn btn-primary" href= <%= boat_path(@booking.boat) %> >See boat details</a>
+    <!-- <a class="btn btn-primary" href= <%= root_path %> >Back to home</a> -->
+  </div>
+</div>
 
-<%= @booking.end_date %>
+
+<!-- change({ hour: 0, min: 0, sec: 0 }) -->
+
 
 
