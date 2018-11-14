@@ -3,7 +3,7 @@
   <div class="show-content">
     <h1> <%= @boat.name %> </h1>
     <p>Book a <%= @boat.boat_type %> ! </p>
-    <a class="btn btn-primary btn-lg">Book now</a>
+    <%= link_to 'Book now', new_boat_booking_path(@boat), class: "btn btn-primary btn-lg" %>
   </div>
 </div>
 
@@ -11,37 +11,42 @@
 
 
 <section class="description">
-  <h2>Rental Information</h2>
+  <ul>
+    <h2>Rental Information</h2>
+  </ul>
   <div class="flex">
     <div class="flex-column">
         <!-- <div class='video'>
           <video src="" autoplay loop></video> -->
         </div>
-        <h3>Description</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis nulla mollitia beatae voluptates tempora aliquam iste eius porro odio magni, ea, itaque quam ipsam esse error provident laudantium, deleniti nam!!</p>
+
+        <ul>
+          <h3><strong>Description</strong></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis nulla mollitia beatae voluptates tempora aliquam iste eius porro odio magni, ea, itaque quam ipsam esse error provident laudantium, deleniti nam!!</p>
+        </ul>
 
 
-      <ul>
-        <div class="info"><span class="_1m8bb6v">Boat name:</span><%= @boat.name %></div>
+        <ul>
+          <div class="info"><span class="_1m8bb6v">Boat name:</span><%= @boat.name %></div>
 
-        <div class="info"><span class="_1m8bb6v">Type:</span><%= @boat.boat_type %></div>
+          <div class="info"><span class="_1m8bb6v">Type:</span><%= @boat.boat_type %></div>
 
-        <div class="info"><span class="_1m8bb6v">Size:</span><%= @boat.size %></div>
+          <div class="info"><span class="_1m8bb6v">Size:</span><%= @boat.size %></div>
 
-        <div class="info"><span class="_1m8bb6v">Price:</span><%= @boat.price %></div>
+          <div class="info"><span class="_1m8bb6v">Price:</span><%= @boat.price %></div>
 
-        <div class="info"><span class="_1m8bb6v">Capacity:</span><%= @boat.capacity %></div>
-      </ul>
+          <div class="info"><span class="_1m8bb6v">Capacity:</span><%= @boat.capacity %></div>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 
-<ul>
-<button type="button" class="_1k01n3v1" aria-busy="false">Contact <%= @boat.name %></button>
-</div>
+  <ul>
+    <button type="button" class="_1k01n3v1" aria-busy="false">Contact <%= @boat.name %></button>
+  </div>
 </ul>
 
 <ul>
-<button type="button" class="_1k01n3v1" aria-busy="false">Book <%= @boat.name %></button>
+  <button type="button" class="_1k01n3v1" aria-busy="false">Book <%= @boat.name %></button>
 </div>
 </ul>
