@@ -56,15 +56,40 @@
     <div class="row">
       <div class="banner-content">
 
-        <div class="wrap">
-         <div class="search">
-          <h2> Search for your boat!</h2>
-          <input type="text" class="searchTerm" placeholder="">
-          <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
+     <!-- Banner content -->
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="row">
+      <div class="banner-content">
+        <div class="form-wrapper" style="width: 200px; margin: 0 auto;">
+
+         <h2> Pick a Boat Date!</h2>
+
+         <%= simple_form_for :search, method: "get" do |f| %>
+         <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+
+         <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+
+
+<p>Boat type</p>
+
+<form action="/action_page.php">
+  <select name="cars">
+    <option value="volvo">Yacht</option>
+    <option value="saab">Sailboat</option>
+    <option value="fiat">Canoe</option>
+    <option value="audi">Launch</option>
+  </select>
+  <br><br>
+</form>
+         <%= f.button :submit, "Go", class: "btn btn-primary" %>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+
     </div>
   </div>
 </div>
@@ -74,11 +99,18 @@
 <span> <h3> <strong>O</strong>ur <strong>b</strong>oats </h3></span>
 
 <!-- cards -->
+<div class="container">
+  <div class="bubble">
+    <a href="">
+      <img src='<%= image_path 'boat (1).png' %>'/>
+    </a>
+  </div>
+  </div>
+
 <div class= "container">
   <div class="row">
     <% @boats.each do |boat| %>
     <div class="col-xs-12 col-sm-6 col-md-3">
-
       <%= link_to boat_path(boat) do %>
       <% if boat.photo.present? %>
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo %>');">
@@ -92,13 +124,18 @@
           <h2><%= boat.name %></h2>
           <p><%= boat.boat_type %></p>
         </div>
-        <!--profile user change in each card
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large">
-      -->
-    </div>
   </div>
   <% end %>
 </div>
 <% end %>
 </div>
 </div>
+
+
+
+
+</div>
+<!-- footer
+<%= render "pages/footer" %>
+-->
+

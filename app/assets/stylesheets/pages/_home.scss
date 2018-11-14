@@ -81,7 +81,7 @@ a {
   .banner {
     color: white;
     text-align: center;
-    height: 40vh;
+    height: 55vh;
     background-size: cover !important;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -160,6 +160,7 @@ a {
   left: 10px;
   font-size: 15px;
   text-transform: uppercase;
+
 }
 .card-description {
   position: absolute;
@@ -251,19 +252,19 @@ body{
   color: #0E8363;
 }
 
-.searchButton {
-  position: absolute;
-  right: -50px;
-  width: 40px;
-  height: 36px;
-  border: 1px solid #0E8363;
-  background: #0E8363;
-  text-align: center;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 20px;
-}
+// .searchButton {
+//   position: absolute;
+//   right: -50px;
+//   width: 40px;
+//   height: 36px;
+//   border: 1px solid #0E8363;
+//   background: #0E8363;
+//   text-align: center;
+//   color: #fff;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   font-size: 20px;
+// }
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
@@ -273,3 +274,71 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
+
+.note {
+    font-size: .8em;
+}
+
+
+.left {
+  float:left;
+}
+
+
+
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bubble {
+  width: 80px;
+  height: 80px;
+  box-sizing: border-box;
+  border: 5px white solid;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+  img { width: 100%; height: auto; }
+}
+
+.content {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
