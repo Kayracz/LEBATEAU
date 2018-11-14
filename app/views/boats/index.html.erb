@@ -13,36 +13,36 @@
     <div class="item active">
       <img src='<%= image_path 'cloudboatcopy.jpg' %>'>
       <div class="carousel-caption">
-        <h1>Rent a boat, ¡Easy & Safe!</h1>
-        <h2>Your best choice in Buenos Aires!</h2>
-      </div>
-    </div>
+       <h1>Rent a boat, ¡Easy & Safely !</h1>
+       <h2>Your best choice in Buenos Aires!</h2>
+     </div>
+   </div>
 
-    <div class="item">
-      <img src='<%= image_path 'lastcanoe.jpg' %>'>
-      <div class="carousel-caption">
-        <h1> More than 1,000 boats to rent at the best price </h1>
-      </div>
-    </div>
+   <div class="item">
+    <img src='<%= image_path 'lastcanoe.jpg' %>'>
+    <div class="carousel-caption">
+     <h1> More than 1,000 boats to rent at the best price </h1>
+   </div>
+ </div>
 
 
-    <div class="item">
-      <img src='<%= image_path 'Aoceanboats.jpg' %>'>
-      <div class="carousel-caption">
-        <h2>Have a Happy cruising!</h2>
-      </div>
-    </div>
-  </div>
+ <div class="item">
+  <img src='<%= image_path 'Aoceanboats.jpg' %>'>
+  <div class="carousel-caption">
+   <h2>Have a Happy cruising!</h2>
+ </div>
+</div>
+</div>
 
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
+<!-- Left and right controls -->
+<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+  <span class="glyphicon glyphicon-chevron-left"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#myCarousel" data-slide="next">
+  <span class="glyphicon glyphicon-chevron-right"></span>
+  <span class="sr-only">Next</span>
+</a>
 </div>
 
 <!-- Banner -->
@@ -50,22 +50,24 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,0,0,0.6) 60%), url('<%= image_path 'bestallstackboatpictures.jpg'%>');">
 
   <!-- Banner content -->
-  <form class="form-inline" action="/action_page.php">
-    <div class="form-group">
-      <label for="email">Boat type:</label>
-      <select class="form-control" id="sel1">
-      <option>Yacht</option>
-      <option>Launch</option>
-      <option>Sailboat</option>
-      <option>Canoe</option>
-      </select>
+  <div id="banner-content">
+    <div>
+      <p>Search for your favourite boat!</p>
     </div>
-    <div class="form-group">
-      <label for="pwd">Name:</label>
-      <input type="password" class="form-control" id="pwd">
+    <div>
+      <form class="form-inline" action="/action_page.php">
+        <div class="form-group">
+          <select class="form-control" id="sel1">
+            <option>Yacht</option>
+            <option>Launch</option>
+            <option>Sailboat</option>
+            <option>Canoe</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
+  </div>
 
 
 </div>
@@ -77,7 +79,7 @@
 </div>
 
 <!-- cards -->
-<div class="container">
+<div class="container" id="bubble-container">
   <div class="bubble">
     <a href="">
       <img src='<%= image_path 'boat (1).png' %>'/>
@@ -85,27 +87,27 @@
   </div>
 </div>
 
-<div class= "container">
+<div class= "container" id="boat-index">
   <div class="row">
     <% @boats.each do |boat| %>
     <div class="col-xs-12 col-sm-6 col-md-3">
       <%= link_to boat_path(boat) do %>
       <% if boat.photo.present? %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo %>');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo %>');">
 
-      <% else %>
+        <% else %>
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_tag("pyyi0a6yphaudutusmcr")%>');">
-      <% end %>
+          <% end %>
 
-        <div class="card-category"></div>
-        <div class="card-description">
-          <h2><%= boat.name %></h2>
-          <p><%= boat.boat_type %></p>
+          <div class="card-category"></div>
+          <div class="card-description">
+            <h2><%= boat.name %></h2>
+            <p><%= boat.boat_type %></p>
+          </div>
         </div>
-        </div>
+        <% end %>
+      </div>
       <% end %>
-        </div>
-    <% end %>
     </div>
   </div>
 </div>
@@ -119,11 +121,11 @@
 
     <h4 class="live-chat-galaxie live-chat-transition">
 
-    Live Chat
+      Live Chat
 
-    <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-up-arrow-icon?wid=15&fmt=png-alpha&op_sharpen=1&resMode=sharp2" alt="live-chat-up-arrow" class="live-chat-arrow live-chat-transition live-chat-up-arrow" />
+      <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-up-arrow-icon?wid=15&fmt=png-alpha&op_sharpen=1&resMode=sharp2" alt="live-chat-up-arrow" class="live-chat-arrow live-chat-transition live-chat-up-arrow" />
 
-    <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-down-arrow-icon?wid=15&fmt=png-alpha&resMode=sharp2" alt="live-chat-down-arrow" class="live-chat-arrow live-chat-transition live-chat-down-arrow" />
+      <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-down-arrow-icon?wid=15&fmt=png-alpha&resMode=sharp2" alt="live-chat-down-arrow" class="live-chat-arrow live-chat-transition live-chat-down-arrow" />
 
     </h4>
 
@@ -134,6 +136,54 @@
   <a href="#" id="chat-button" class="live-chat-galaxie">Chat Now</a>
 
 </div>
+
+
+<!-- MAIN CONTAINER -->
+<div>
+  <!-- OWNER BOATS -->
+  <div>
+    <!-- CARDS -->
+    <!-- FIRST CARD -->
+    <div>
+      <i></i>
+      <p></p>
+    </div>
+    <!-- SECOND CARD -->
+    <div>
+      <i></i>
+      <p></p>
+    </div>
+    <!-- THIRD CARD -->
+    <div>
+      <i></i>
+      <p></p>
+    </div>
+  </div>
+  <!-- LESSEE -->
+  <div>
+    <!-- CARDS -->
+    <!-- FIRST CARD -->
+    <div>
+      <i></i>
+      <p></p>
+    </div>
+    <!-- SECOND CARD -->
+    <div>
+      <i></i>
+      <p></p>
+    </div>
+    <!-- THIRD CARD -->
+    <div>
+      <i></i>
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 <!-- grid -->
 
@@ -148,7 +198,7 @@
         <li class="icon-com-bubble-line"><span></span>
         Contact the owners of the boats for free and ask them about issues related to the boat: availability, equipment, etc. through the built-in messaging service..</li>
         <li class="icon-interface-circle-tick-a"><span class="ico"></span>
-        Book directly online with total security and rent the boat or sailboat of your dreams in just a few clicks. Only the charge will be made in case the owner of the boat accepts your rental request. 100% secure payment. Click & amp; Boat It's your trusted intermediary.</li>
+        Book directly online with total security and rent the boat or sailboat of your dreams in just a few clicks. Only the charge will be made in case the owner of the boat accepts your rental request. 100% secure payment. LeBateau; Boat It's your trusted intermediary.</li>
       </ul>
     </div>
 
@@ -156,7 +206,7 @@
       <ul>
         <h4 class="child-to-show">Boat Owner</h4>
         <li class='<%= image_path 'boat (1).png' %>'><span class="ico"></span>
-        Create an ad for free to rent your boat. Sailboats, inflatable boats, catamarans, all are welcome at Click & amp; Boat!</li>
+        Create an ad for free to rent your boat. Sailboats, inflatable boats, catamarans, all are welcome at LeBateau; Boat!</li>
         <li class="icon-location-avenue"><span class="ico"></span>
         Rent your boat, when you want and at the price you want. LeBateau; Boat helps you to make your boat profitable by allowing you to cover maintenance and usage expenses.</li>
         <li class="icon-user-lock"><span class="ico"></span>
