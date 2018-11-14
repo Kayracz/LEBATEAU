@@ -56,15 +56,40 @@
     <div class="row">
       <div class="banner-content">
 
-        <div class="wrap">
-         <div class="search">
-          <h2> Search for your boat!</h2>
-          <input type="text" class="searchTerm" placeholder="">
-          <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
+     <!-- Banner content -->
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="row">
+      <div class="banner-content">
+        <div class="form-wrapper" style="width: 200px; margin: 0 auto;">
+
+         <h2> Pick a Boat Date!</h2>
+
+         <%= simple_form_for :search, method: "get" do |f| %>
+         <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+
+         <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+
+
+<h2>Boat type</h2>
+
+<form action="/action_page.php">
+  <select name="cars">
+    <option value="volvo">Yacht</option>
+    <option value="saab">Sailboat</option>
+    <option value="fiat">Canoe</option>
+    <option value="audi">Launch</option>
+  </select>
+  <br><br>
+</form>
+         <%= f.button :submit, "Go", class: "btn btn-primary" %>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+
     </div>
   </div>
 </div>
@@ -73,12 +98,20 @@
 
 <span> <h3> <strong>O</strong>ur <strong>b</strong>oats </h3></span>
 
+
 <!-- cards -->
+<div class="container">
+  <div class="bubble">
+    <a href="">
+      <img src='<%= image_path 'boat (1).png' %>'/>
+    </a>
+  </div>
+  </div>
+
 <div class= "container">
   <div class="row">
     <% @boats.each do |boat| %>
     <div class="col-xs-12 col-sm-6 col-md-3">
-
       <%= link_to boat_path(boat) do %>
       <% if boat.photo.present? %>
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo %>');">
@@ -92,13 +125,73 @@
           <h2><%= boat.name %></h2>
           <p><%= boat.boat_type %></p>
         </div>
-        <!--profile user change in each card
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large">
-      -->
-    </div>
   </div>
   <% end %>
 </div>
 <% end %>
 </div>
 </div>
+
+</div>
+
+
+<!-- live chat -->
+
+<div id="live-chat" class="live-chat-transition">
+
+  <div id="chat-label" class="live-chat-transition">
+
+    <h4 class="live-chat-galaxie live-chat-transition">
+
+      Live Chat
+
+      <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-up-arrow-icon?wid=15&fmt=png-alpha&op_sharpen=1&resMode=sharp2" alt="live-chat-up-arrow" class="live-chat-arrow live-chat-transition live-chat-up-arrow" />
+
+      <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-down-arrow-icon?wid=15&fmt=png-alpha&resMode=sharp2" alt="live-chat-down-arrow" class="live-chat-arrow live-chat-transition live-chat-down-arrow" />
+
+    </h4>
+
+  </div>
+
+  <p><strong>Need advice?</strong><br>Connect with our in&#8209;store advisors and have your questions answered!</p>
+
+  <a href="#" id="chat-button" class="live-chat-galaxie">Chat Now</a>
+
+</div>
+
+<!-- grid -->
+
+<div class="grid">
+    <div class="col-6-12 key-block">
+      <ul>
+        <h4 class="child-to-show">Arrendatario </h4>
+        <li class="icon-tool-magnifier"><span></span>
+See all ads through the search engine. Find a boat or a sailboat for rent at the best price. Enjoy our insurance included to rent and sail safely.</li>
+        <li class="icon-com-bubble-line"><span></span>
+Contact the owners of the boats for free and ask them about issues related to the boat: availability, equipment, etc. through the built-in messaging service..</li>
+        <li class="icon-interface-circle-tick-a"><span class="ico"></span> Reserve directamente en línea con total seguridad y alquile el barco o velero de sus sueños en tan solo unos clics. Únicamente se le realizará el cargo en caso de que el propietario de la embarcación acepte su solicitud de alquiler. Pago seguro al 100 %. Click&amp;Boat Es su intermediario de confianza.</li>
+      </ul>
+    </div>
+    <div class="col-6-12 cta cta-find-boat display-on-mobile">
+      <a href="https://www.clickandboat.com/es/alquiler-barcos/españa" class="btn medium xl">Encuentre un barco</a>
+    </div>
+    <div class="col-6-12 key-block">
+      <ul>
+        <h4 class="child-to-show">Propietario</h4>
+        <li class="icon-transport-boat"><span class="ico"></span> Cree un anuncio gratuitamente para alquilar su barco. Veleros, neumáticas, lanchas, catamaranes, todos son bienvenidos en Click&amp;Boat!</li>
+        <li class="icon-location-avenue"><span class="ico"></span> Alquile a quien quiera, cuando quiera y al precio que quiera. Click&amp;Boat le ayuda a rentabilizar su barco al permitirle cubrir los gastos de mantenimiento y uso.</li>
+        <li class="icon-user-lock"><span class="ico"></span> Seguro a todo riesgo opcional de hasta ocho millones de euros de cobertura y plataforma de pago segura para la fianza. Confíenos el alquiler de su velero, barco a motor o catamarán.</li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <div>
+
+    </div>
+  </div>
+
+
+
+<!-- footer
+<%= render "pages/footer" %>
+-->
+
