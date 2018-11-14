@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-  def show
-  end
 
   def new
     @boat = Boat.find(params[:boat_id])
@@ -20,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.boat = @boat
     @booking.user = current_user
     if @booking.save
-      redirect_to boat_path(@boat)
+      redirect_to boat_booking_path(@boat, @booking) # need to pass the ids of both the boat and booking
     else
       render :new
     end
