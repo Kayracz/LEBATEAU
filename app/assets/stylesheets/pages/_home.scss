@@ -1,5 +1,5 @@
 .carousel-inner > .item {
-  height: 50vh;
+  height: 60vh;
   border: black;
   h1, h2, p {
     text-shadow: 2px 2px black;
@@ -11,6 +11,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  padding: 10px;
 }
 
 // // Specific CSS for your home-page
@@ -241,8 +244,15 @@
   color: #0E8363;
 }
 
+.form-group {
+  color:white;
+}
 
 
+.section{
+  color:#0E8363;
+  text-align:center;
+}
 
 // // search bar
 // @import url(https://fonts.googleapis.com/css?family=Open+Sans);
