@@ -7,11 +7,32 @@ body {
 }
 
 
-img {
-  height: 100px;
+#tick {
+  height: 120px;
 }
 
 p {
 
   color: green
 }
+
+.black {
+  color: black
+}
+
+.wrapper {
+  // background-color: #0E8363;
+  background-color: rgb(220, 245, 247);
+  color: #0E8363;
+  // background-image: url('assets/images/ocean.jpg');
+  background-size: cover;
+  justify-content: center;
+  height: 100vh
+}
+
+
+
+
+
+
+
