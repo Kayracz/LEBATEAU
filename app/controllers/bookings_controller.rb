@@ -1,9 +1,18 @@
 class BookingsController < ApplicationController
+  def show
+  end
+
   def new
     @boat = Boat.find(params[:boat_id])
     @booking = Booking.new
     # @all_users = User.all
   end
+
+
+  def show  # Added in Nick_Booking_show branch
+    @booking = Booking.find(params[:id])
+  end
+
 
   def create
     @booking = Booking.new(booking_params)
