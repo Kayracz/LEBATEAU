@@ -15,6 +15,22 @@
   height: 50px;
 }
 
+.navbar-wagon-brand {
+  display: flex;
+  align-items: center;
+  color: #0E8363;
+  text-decoration: none;
+}
+.navbar-wagon-brand:hover {
+  text-decoration: none;
+  color: #0E8363;
+}
+
+.navbar-wagon-brand h2 {
+  margin: 0;
+  padding-left: 10px;
+}
+
 /* User Avatar */
 .navbar-wagon .avatar {
   height: 35px;
@@ -41,7 +57,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #0E8363;
   text-decoration: none;
 }
 
@@ -54,14 +70,17 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: #333 !important;
+  font-weight: lighter;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
+
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: #0E8363 !important;
+  font-weight: 700;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';

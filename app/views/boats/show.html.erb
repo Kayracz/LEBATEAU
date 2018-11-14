@@ -1,8 +1,9 @@
+<% title @boat.name %>
 
 <div class="showimage" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @boat.photo %>');">
   <div class="show-content">
     <h1> <%= @boat.name %> </h1>
-    <p>Book a <%= @boat.boat_type %> ! </p>
+
     <%= link_to 'Book now', new_boat_booking_path(@boat), class: "btn btn-primary btn-lg" %>
   </div>
 </div>
@@ -46,7 +47,3 @@
   </div>
 </ul>
 
-<ul>
-  <button type="button" class="_1k01n3v1" aria-busy="false">Book <%= @boat.name %></button>
-</div>
-</ul>

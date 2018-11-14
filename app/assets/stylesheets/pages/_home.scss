@@ -1,134 +1,156 @@
-// Specific CSS for your home-page
-header {
+.carousel-inner > .item {
+  height: 60vh;
+  border: black;
+  h1, h2, p {
+    text-shadow: 2px 2px black;
+  }
+}
+
+.banner {
+  height: 40vh;
   display: flex;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  height: 64px;
+  justify-content: center;
   align-items: center;
-  background-color: white;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  padding: 10px;
 }
 
-
-header img {
-  height: 32px;
-  padding-left: 24px;
-}
-
-nav {
-  text-align: right;
-  padding-right: 24px;
-  flex-grow: 1;
-  width: 100%;
-}
-
-nav span {
-  display: inline-block;
-  padding: 12px;
-  text-decoration: none;
-  transition: all 0.3s ease 0s;
-}
-
-h3{
-  text-align: center;
-  font-size: 20px;
-}
-
-
-span{
-  color: #0E8363;
-
-}
-a:hover {
-  font-weight: bold;
-  transition:font-weight 0.3s ease 0s;
-  text-decoration: none;
-}
-.mobile {
-  display: none;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.menu{
-  color: #0E8363;
-  border-color: black;
-  text-align: right;
-}
-
-.menu2{
-  font-size: 15px;
-}
-
-.button:hover {
-  color: black;
-  background-color: white;
-    /*-webkit-transtion: background-color 250ms linear;*/
-  }
-
-  .button {
-    background-color: dimgray;
-    font-weight: bold;
-    width: 60%;
-    margin: 0;
-    text-align: center;
-    transition: all 0.3s ease 0s;
-  }
-
-
-  .banner {
-    color: white;
-    text-align: center;
-    height: 55vh;
-    background-size: cover !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    background-position: center;
-    text-shadow: 1px 1px 1px #000;
-    margin-top: 20px;
-  }
-
-
-  .banner-content {
-    h2 {
-     color:white;
-     font-size: 20px;
-   }
- }
-
-// .item {
-//   height: 90vh;
+// // Specific CSS for your home-page
+// header {
+//   display: flex;
+//   width: 100%;
+//   position: fixed;
+//   z-index: 1;
+//   height: 64px;
+//   align-items: center;
+//   background-color: white;
 // }
 
 
- .carousel-caption{
+// header img {
+//   height: 32px;
+//   padding-left: 24px;
+// }
 
-  h1 {
-    color:white;
-     font-size: 30px;
-     text-align: center;
-     text-shadow: 1px 1px 1px #000;
-     text-border: black;
-  }
-  h2 {
-    color:white;
-     font-size: 30px;
-     text-align: center;
-     text-border: black;
-  }
- }
+// nav {
+//   text-align: right;
+//   padding-right: 24px;
+//   flex-grow: 1;
+//   width: 100%;
+// }
 
- .carousel-inner{
- }
+// nav span {
+//   display: inline-block;
+//   padding: 12px;
+//   text-decoration: none;
+//   transition: all 0.3s ease 0s;
+// }
+
+// h3{
+//   text-align: center;
+//   font-size: 20px;
+// }
+
+
+// span{
+//   color: #0E8363;
+
+// }
+// a:hover {
+//   font-weight: bold;
+//   transition:font-weight 0.3s ease 0s;
+//   text-decoration: none;
+// }
+// .mobile {
+//   display: none;
+// }
+// a {
+//   color: inherit;
+//   text-decoration: none;
+// }
+
+// .menu{
+//   color: #0E8363;
+//   border-color: black;
+//   text-align: right;
+// }
+
+// .menu2{
+//   font-size: 15px;
+// }
+
+// .button:hover {
+//   color: black;
+//   background-color: white;
+//     /*-webkit-transtion: background-color 250ms linear;*/
+//   }
+
+//   .button {
+//     background-color: dimgray;
+//     font-weight: bold;
+//     width: 60%;
+//     margin: 0;
+//     text-align: center;
+//     transition: all 0.3s ease 0s;
+//   }
+
+
+//   .banner {
+//     color: white;
+//     text-align: center;
+//     height: 55vh;
+//     background-size: cover !important;
+//     display: -webkit-box;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -webkit-box-align: center;
+//     -ms-flex-align: center;
+//     align-items: center;
+//     -webkit-box-pack: center;
+//     -ms-flex-pack: center;
+//     justify-content: center;
+//     background-position: center;
+//     text-shadow: 1px 1px 1px #000;
+//     margin-top: 20px;
+//   }
+
+
+//   .banner-content {
+//     h2 {
+//      color:white;
+//      font-size: 20px;
+//    }
+//  }
+
+// // .item {
+// //   height: 90vh;
+// // }
+
+
+//  .carousel-caption{
+//   h1 {
+//     color:white;
+//      font-size: 30px;
+//      text-align: center;
+//      text-shadow: 1px 1px 1px #000;
+//      text-border: black;
+//       right: 58%;
+//       left: auto;
+//        top: auto;
+//   }
+//   h2 {
+//     color:white;
+//      font-size: 30px;
+//      text-align: center;
+//      text-border: black;
+//      text-shadow: 1px 1px 1px #000;
+//   }
+//  }
+
+//  .carousel-inner{
+//   height: 75vh;
+//  }
 
 
  .card {
@@ -222,78 +244,85 @@ a {
   color: #0E8363;
 }
 
-
-
-
-// search bar
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-body{
-  background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
+.form-group {
+  color:white;
 }
 
-.search {
-  width: 100%;
-  position: relative
+
+.section{
+  color:#0E8363;
+  text-align:center;
 }
 
-.searchTerm {
-  float: left;
-  width: 100%;
-  border: 3px solid #0E8363;
-  padding: 2px;
-  height: 35px;
-  border-radius: 5px;
-  outline: none;
-  color: #9DBFAF;
-}
+// // search bar
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-.searchTerm:focus{
-  color: #0E8363;
-}
-
-// .searchButton {
-//   position: absolute;
-//   right: -50px;
-//   width: 40px;
-//   height: 36px;
-//   border: 1px solid #0E8363;
-//   background: #0E8363;
-//   text-align: center;
-//   color: #fff;
-//   border-radius: 5px;
-//   cursor: pointer;
-//   font-size: 20px;
+// body{
+//   background: #f2f2f2;
+//   font-family: 'Open Sans', sans-serif;
 // }
 
-/*Resize the wrap to see the search bar change!*/
-.wrap{
-  width: 30%;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+// .search {
+//   width: 100%;
+//   position: relative
+// }
 
-label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
-}
+// .searchTerm {
+//   float: left;
+//   width: 100%;
+//   border: 3px solid #0E8363;
+//   padding: 2px;
+//   height: 35px;
+//   border-radius: 5px;
+//   outline: none;
+//   color: #9DBFAF;
+// }
 
-input,
-label {
-    margin: .4rem 0;
-}
+// .searchTerm:focus{
+//   color: #0E8363;
+// }
 
-.note {
-    font-size: .8em;
-}
+// // .searchButton {
+// //   position: absolute;
+// //   right: -50px;
+// //   width: 40px;
+// //   height: 36px;
+// //   border: 1px solid #0E8363;
+// //   background: #0E8363;
+// //   text-align: center;
+// //   color: #fff;
+// //   border-radius: 5px;
+// //   cursor: pointer;
+// //   font-size: 20px;
+// // }
+
+// /*Resize the wrap to see the search bar change!*/
+// .wrap{
+//   width: 30%;
+//   position: absolute;
+//   top: 100%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+// label {
+//     display: block;
+//     font: 1rem 'Fira Sans', sans-serif;
+// }
+
+// input,
+// label {
+//     margin: .4rem 0;
+// }
+
+// .note {
+//     font-size: .8em;
+// }
 
 
-.left {
-  float:left;
-}
+// .left {
+//   float:left;
+// }
 
 
 
@@ -342,13 +371,6 @@ label {
   box-sizing: border-box;
   text-align: center;
 }
-
-
-
-
-
-
-
 
 @font-face{
   font-family:'GalaxieCondensedMedium';src:url("https://dl.dropboxusercontent.com/s/dgr55wytmqb35f3/PolarisCondensed-Medium.woff") format("woff");
@@ -603,4 +625,14 @@ label {
     border: 0;
     font: inherit;
     vertical-align: baseline;
+    color: #6a7580;
 }
+
+ul li {
+    margin: 40px 0;
+    padding-left: 40px;
+    line-height: 2em;
+    text-align: left;
+    font-size: 15px;
+    color: #6a7580;
+    }

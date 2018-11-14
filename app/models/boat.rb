@@ -6,4 +6,5 @@ class Boat < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   validates :name, :boat_type, :size, :capacity, :price, :photo, presence: true
+  validates :name, uniqueness: true
 end
