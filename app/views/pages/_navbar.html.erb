@@ -1,36 +1,38 @@
-
-<div class="navbar">
-  <header>
-    <%= link_to root_path do %>
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to root_path, class:"navbar-wagon-brand" do %>
     <img class="menu" src='<%= image_path 'boat (1).png' %>' />
-    <% end %>
-    <%= link_to root_path do %>
     <h2 class="menu"><b>Le</b>Bateau</h2>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <% if current_user.present? %>
+    <%= link_to "Log In/Signup", new_user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Upload a boat", new_boat_path, class:"navbar-wagon-item navbar-wagon-link" %>
     <% end %>
-    <nav class="menu">
-
-      <span class="menu2"><%= link_to "Log In/Signup", new_user_session_path %></span>
-      <span class="menu2"><%= link_to "Upload a boat", new_boat_path %></span>
-
-    </nav>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src='<%= image_path 'menu.png' %>' class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <img src='<%= image_path 'profile.png' %>' class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Dashboard</a></li>
-
-          <li><%= link_to "Upload a boat", new_boat_path %></li>
-          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "Dashboard", root_path %></li>
+          <li><%= link_to "Bookings", root_path %></li>
+          <li><%= link_to "Log Out", destroy_user_session_path %></li>
         </ul>
       </div>
     </div>
   </div>
 
-  <nav class="mobile">
-    <a href="#"><img src="https://s3.us-east-2.amazonaws.com/ajpics/codecademy+capstone/ic-login.svg" alt="Log-In"></a>
-  </nav>
-
-</header>
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><%= link_to "Upload a boat", new_boat_path %></li>
+        <li><%= link_to "Log Out", destroy_user_session_path %></li>
+      </ul>
+    </div>
+  </div>
 </div>
