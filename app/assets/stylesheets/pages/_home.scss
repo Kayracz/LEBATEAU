@@ -102,6 +102,8 @@ a {
     h2 {
      color:white;
      font-size: 20px;
+     display: flex;
+     align-items: center;
    }
  }
 
@@ -110,28 +112,28 @@ a {
 // }
 
 
- .carousel-caption{
+.carousel-caption{
 
   h1 {
     color:white;
-     font-size: 30px;
-     text-align: center;
-     text-shadow: 1px 1px 1px #000;
-     text-border: black;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    text-border: black;
   }
   h2 {
     color:white;
-     font-size: 30px;
-     text-align: center;
-     text-border: black;
+    font-size: 30px;
+    text-align: center;
+    text-border: black;
   }
- }
+}
 
- .carousel-inner{
- }
+.carousel-inner{
+}
 
 
- .card {
+.card {
   height: 175px;
   weight:50px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -277,17 +279,17 @@ body{
 }
 
 label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
 }
 
 input,
 label {
-    margin: .4rem 0;
+  margin: .4rem 0;
 }
 
 .note {
-    font-size: .8em;
+  font-size: .8em;
 }
 
 
@@ -594,13 +596,13 @@ label {
 
 
 .grid {
-    width: 100%;
-    max-width: 1140px;
-    min-width: 755px;
-    margin: 0 auto;
-    padding: 0;
-    font-size: 100%;
-    border: 0;
-    font: inherit;
-    vertical-align: baseline;
+  width: 100%;
+  max-width: 1140px;
+  min-width: 755px;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 100%;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
