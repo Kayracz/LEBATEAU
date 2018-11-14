@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-  def show
-  end
 
   def new
     @boat = Boat.find(params[:boat_id])
@@ -8,7 +6,7 @@ class BookingsController < ApplicationController
    # @all_users = User.all
  end
 
- def show  # Added in Nick_Booking_show branch
+ def show  # Added in Nick_Booking_show branch random comment added
     @booking = Booking.find(params[:id])
  end
 
@@ -19,7 +17,7 @@ class BookingsController < ApplicationController
   @booking.user = current_user
 
     # @dose.ingredient_id = ingredient_id_params[:ingredient_id].to_i
-    return redirect_to boat_path(@boat) if @booking.save
+    return redirect_to boat_booking_path(@booking) if @booking.save
     render :new # this goes to the new.html.erb in the doses folder, which requires @all_ingredients
   end
 
