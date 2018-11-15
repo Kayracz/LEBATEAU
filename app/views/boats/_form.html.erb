@@ -1,7 +1,7 @@
 
 <%= simple_form_for @boat do |f| %>
   <%= f.input :name %>
-  <%= f.input :boat_type %>
+  <%= f.input :boat_type, collection: Boat::BOAT_TYPE %>
   <%= f.input :size %>
   <%= f.input :capacity %>
   <%= f.input :price %>
