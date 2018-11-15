@@ -4,6 +4,14 @@ class BoatsController < ApplicationController
   def index
     @boats = Boat.all
     @booking = Booking.new
+
+    @boats = Boat.where.not(latitude: nil, longitude: nil)
+    @markers = @boats.map do |boat|
+      {
+        lng: boat.longitude,
+        lat: boat.latitude
+      }
+    end
   end
 
   def show
