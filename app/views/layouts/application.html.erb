@@ -6,6 +6,8 @@
   <title> LeBateau - <%= content_for?(:title) ? yield(:title) : 'Rent a boat, Easy and safe!, Buenos Aires.' %> </title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
