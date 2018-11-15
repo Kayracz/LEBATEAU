@@ -1,0 +1,114 @@
+<div class="wrapper">
+
+  <div class="container">
+    <h2>Profile</h2>
+    <div>
+      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+
+      <div>
+        <p>Name: Luis</p>
+        <p>Lastname: Barboza</p>
+        <p>Email: <%= current_user.email %></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <h2>Bookings</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Booking #</th>
+          <th scope="col">Renter name</th>
+          <th scope="col">Start date</th>
+          <th scope="col">End date</th>
+          <th scope="col">Total price</th>
+          <th scope="col">Status</th>
+          <th scope="col">Cancel booking</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark Otto</td>
+          <td><%= Date.today %></td>
+          <td><%= Date.today %></td>
+          <td>300 $</td>
+          <td>Confirmed</td>
+          <td><a href="#">Cancel booking</a></td>
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mike Otto</td>
+          <td><%= Date.today %></td>
+          <td><%= Date.today %></td>
+          <td>300 $</td>
+          <td>Confirmed</td>
+          <td><a href="#">Cancel booking</a></td>
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td>Daniel Otto</td>
+          <td><%= Date.today %></td>
+          <td><%= Date.today %></td>
+          <td>300 $</td>
+          <td>Confirmed</td>
+          <td><a href="#">Cancel booking</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="wrapper">
+    <div class="container">
+    <h2>My boats</h2>
+
+    </div>
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/cache/resized/899_42056396064_958927d6a2_h_1200_900_nofilter.jpg');">
+          <div class="card-category"></div>
+          <div class="card-description">
+            <h2>Boat name</h2>
+            <p>Boat type</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/cache/resized/899_42056396064_958927d6a2_h_1200_900_nofilter.jpg');">
+          <div class="card-category"></div>
+          <div class="card-description">
+            <h2>Boat name</h2>
+            <p>Boat type</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/cache/resized/899_42056396064_958927d6a2_h_1200_900_nofilter.jpg');">
+          <div class="card-category"></div>
+          <div class="card-description">
+            <h2>Boat name</h2>
+            <p>Boat type</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/cache/resized/899_42056396064_958927d6a2_h_1200_900_nofilter.jpg');">
+          <div class="card-category"></div>
+          <div class="card-description">
+            <h2>Boat name</h2>
+            <p>Boat type</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
