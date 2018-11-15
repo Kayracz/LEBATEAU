@@ -31,7 +31,7 @@ class BoatsController < ApplicationController
   end
 
   def create
-    @boat = Boat.new(boat_params) # should replace with .new(restaurant_params) to use the sanitised params, instead of the dirty one
+    @boat = Boat.new(boat_params)
     @boat.user = current_user
 
     if @boat.save
@@ -60,9 +60,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-
-    params.require(:boat).permit(:name, :boat_type, :size, :capacity, :price, :description, :photo) # this is called strong params, for security
-
+    params.require(:boat).permit(:name, :boat_type, :size, :capacity, :price, :description, :photo)
   end
 
   def set_boat
