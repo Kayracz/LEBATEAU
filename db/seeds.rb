@@ -8,6 +8,7 @@
 puts "Start seeding process..."
 puts "Destroy all old seeds"
 
+Booking.destroy_all
 Boat.destroy_all
 User.destroy_all
 
