@@ -20,6 +20,7 @@ User.all.each do |user|
     Boat.create(
       user: user,
       name: Faker::Artist.name,
+      location: Faker::Address.city,
       boat_type: boat_type.sample,
       size: i,
       capacity: (i * 10),
