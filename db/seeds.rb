@@ -16,8 +16,8 @@ images = %w(http://res.cloudinary.com/deruwllkv/image/upload/v1542312646/wehfbsg
 
 puts "Create new seeds"
 
-3.times do |i|
-  User.create!(email: "#{i}-user@gmail.com", password: "123456")
+2.times do |i|
+  User.create!(email: "#{i}-user@gmail.com", password: "123456", first_name: "#{i}-Jack", last_name: "#{i}-Smith")
 end
 
 boat_type = %w(Yatch 'Sail boat' Canoe Launch Houseboat 'Jet boat' Dinghy)

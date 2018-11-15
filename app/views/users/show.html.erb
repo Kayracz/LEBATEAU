@@ -3,110 +3,118 @@
   <div class="container">
     <h2>Profile</h2>
     <div>
-      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-
+      <!-- <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan"> -->
+      <% if @user.photo.present? %>
+      <img class="avatar-large" src=<%= cl_image_path @user.photo, height: 300, width: 400, crop: :fill %>>
+      <% end %>
       <div>
-        <p>Name: Luis</p>
-        <p>Lastname: Barboza</p>
-        <p>Email: <%= current_user.email %></p>
+        <p>First name: <%= @user.first_name %></p>
+        <p>Last name:  <%= @user.last_name %></p>
+        <p>Email: <%= @user.email %></p>
       </div>
     </div>
   </div>
 
-
+<% if @bookings.length > 0 %>
   <div class="container">
-    <h2>Bookings</h2>
+    <h2>My bookings</h2>
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Booking #</th>
-          <th scope="col">Renter name</th>
+          <th scope="col">Boat name</th>
+          <th scope="col">Picture</th>
+          <th scope="col">Owner name</th>
+          <th scope="col">Owner email</th>
           <th scope="col">Start date</th>
           <th scope="col">End date</th>
-          <th scope="col">Total price</th>
+          <th scope="col">Total price (USD)</th>
           <th scope="col">Status</th>
           <th scope="col">Cancel booking</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark Otto</td>
-          <td><%= Date.today %></td>
-          <td><%= Date.today %></td>
-          <td>300 $</td>
-          <td>Confirmed</td>
-          <td><a href="#">Cancel booking</a></td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mike Otto</td>
-          <td><%= Date.today %></td>
-          <td><%= Date.today %></td>
-          <td>300 $</td>
-          <td>Confirmed</td>
-          <td><a href="#">Cancel booking</a></td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Daniel Otto</td>
-          <td><%= Date.today %></td>
-          <td><%= Date.today %></td>
-          <td>300 $</td>
-          <td>Confirmed</td>
-          <td><a href="#">Cancel booking</a></td>
-        </tr>
-      </tbody>
+       <tbody>
+         <% @bookings.each_with_index do |booking, index| %>
+           <tr>
+            <th scope="row"><%= index + 1 %></th>
+            <td><%= booking.boat.name %></td>
+            <td><img class="avatar-square" src=<%= cl_image_path booking.boat.photo%> alt="Boat image"></td>
+            <td><%= booking.boat.user.first_name %> <%= booking.boat.user.last_name %></td>
+            <td><%= booking.boat.user.email %></td>
+            <td><%= booking.start_date.change({ hour: 9, min: 0}) %></td>
+            <td><%= booking.end_date.change({ hour: 17, min: 0}) %></td>
+            <td><%= (booking.end_date.day - booking.start_date.day).to_i*booking.boat.price %></td>
+            <td>Confirmed</td>
+            <td><a href="#">Cancel booking</a></td>
+          </tr>
+         <% end %>
+       </tbody>
     </table>
   </div>
+  <% end  %>
 
+  <% counterNick = 0 %>
 
-  <div class="wrapper">
-    <div class="container">
-    <h2>My boats</h2>
+<% if @owned_boats.length > 0 %>
 
-    </div>
-    <div class="row">
+  <% @owned_boats.each do |boat| %>
+   <% if boat.bookings.length > 0 %>
+   <% counterNick += 1 %>
+  <% end %>
+  <% end %>
 
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/cache/resized/899_42056396064_958927d6a2_h_1200_900_nofilter.jpg');">
-          <div class="card-category"></div>
-          <div class="card-description">
-            <h2>Boat name</h2>
-            <p>Boat type</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/cache/resized/899_42056396064_958927d6a2_h_1200_900_nofilter.jpg');">
-          <div class="card-category"></div>
-          <div class="card-description">
-            <h2>Boat name</h2>
-            <p>Boat type</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/cache/resized/899_42056396064_958927d6a2_h_1200_900_nofilter.jpg');">
-          <div class="card-category"></div>
-          <div class="card-description">
-            <h2>Boat name</h2>
-            <p>Boat type</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/cache/resized/899_42056396064_958927d6a2_h_1200_900_nofilter.jpg');">
-          <div class="card-category"></div>
-          <div class="card-description">
-            <h2>Boat name</h2>
-            <p>Boat type</p>
-          </div>
-        </div>
-      </div>
+<% end %>
 
-    </div>
+<% if @owned_boats.length > 0 && counterNick == 0%>
+<p>There no bookings for the boats that you own.</p>
+
+<% end %>
+
+  <% if counterNick > 0 %>
+  <div class="container">
+    <h2>Bookings of my boats</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Booking #</th>
+          <th scope="col">Boat name</th>
+          <th scope="col">Picture</th>
+          <th scope="col">Renter name</th>
+          <th scope="col">Renter email</th>
+          <th scope="col">Start date</th>
+          <th scope="col">End date</th>
+          <th scope="col">Total price (USD)</th>
+          <th scope="col">Status</th>
+          <th scope="col">Cancel booking</th>
+        </tr>
+      </thead>
+       <tbody>
+         <% @owned_boats.each do |boat| %>
+         <% if boat.bookings.length > 0 %>
+         <% boat.bookings.each_with_index do |booking, index| %>
+           <tr>
+            <th scope="row"><%= index + 1 %></th>
+            <td><%= booking.boat.name %></td>
+            <td><img class="avatar-square" src=<%= cl_image_path booking.boat.photo%> alt="Boat image"></td>
+            <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
+            <td><%= booking.user.email %></td>
+            <td><%= booking.start_date.change({ hour: 9, min: 0}) %></td>
+            <td><%= booking.end_date.change({ hour: 17, min: 0}) %></td>
+            <td><%= (booking.end_date.day - booking.start_date.day).to_i*booking.boat.price %></td>
+            <td>Confirmed</td>
+            <td><a href="#">Cancel booking</a></td>
+          </tr>
+         <% end %>
+         <% end %>
+         <% end %>
+       </tbody>
+    </table>
   </div>
+  <% end  %>
+
+
+
+
 
 
 </div>
