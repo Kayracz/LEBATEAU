@@ -1,10 +1,12 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
+<!-- CAROUSEL -->
+<%= render "carrousel" %>
+
+
+<!-- BANNER -->
+<%= render "banner" %>
+
+<!-- BOATS -->
+<div class="container-fluid">
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
@@ -79,31 +81,42 @@
 
 <div class= "container" id="boat-index">
   <div class="row">
-    <% @boats.each do |boat| %>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <%= link_to boat_path(boat) do %>
-      <% if boat.photo.present? %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo %>');">
-
-        <% else %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_tag("pyyi0a6yphaudutusmcr")%>');">
-          <% end %>
-
-          <div class="card-category"></div>
-          <div class="card-description">
-            <h2><%= boat.name %></h2>
-            <p><%= boat.boat_type %></p>
-          </div>
+      <!-- CARDS -->
+    <div class="col-xs-12 col-sm-7 boats-cards">
+      <!-- IF THERE IS NO BOATS -->
+      <% if @boats.empty? %>
+        <div class='boats-taken text-center'>
+          <p>Sorry, all boats for this category are taken!</p>
+          <%= image_tag("titanic")%>
         </div>
-        <% end %>
-      </div>
       <% end %>
+      <!-- IF THERE IS BOATS -->
+      <% @boats.each do |boat| %>
+        <%= link_to boat_path(boat) do %>
+          <% if boat.photo.present? %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo %>');">
+          <% else %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_tag("pyyi0a6yphaudutusmcr")%>');">
+          <% end %>
+            <div class="card-description">
+              <h2><%= boat.name %></h2>
+              <p><%= boat.boat_type %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="hidden-xs col-sm-5" style="padding: 0;">
+      <!-- MAP -->
+      <div
+      id="map"
+      style="width: 100%;
+      height: 60vh;"
+      data-markers="<%= @markers.to_json %>"
+      ></div>
     </div>
   </div>
 </div>
-
-
-<!-- live chat -->
 
 <div id="live-chat" class="live-chat-transition">
 
@@ -126,51 +139,3 @@
 <p><strong>Need help?</strong><br>Connect with our LeBateau staff and have your questions answered!</p>
 
 <a href="#" id="chat-button" class="live-chat-galaxie">Chat Now</a>
-
-</div>
-
-
-
-
-<!-- grid -->
-<div class="sep"></div>
-<div class="container">
-
-  <div class="grid">
-    <div class="col-sm-12 col-md-6 key-block">
-      <ul class="list-unstyled">
-        <h4 class="child-to-show"><strong>Lessee </strong></h4>
-        <li class="icon-tool-magnifier"><span></span>
-        See all ads through the search engine. Find a boat or a sailboat for rent at the best price. Enjoy our insurance included to rent and sail safely.</li>
-        <li class="icon-com-bubble-line"><span></span>
-        Contact the owners of the boats for free and ask them about issues related to the boat: availability, equipment, etc. through the built-in messaging service..</li>
-        <li class="icon-interface-circle-tick-a"><span class="ico"></span>
-        Book directly online with total security and rent the boat or sailboat of your dreams in just a few clicks. Only the charge will be made in case the owner of the boat accepts your rental request. 100% secure payment. LeBateau; Boat It's your trusted intermediary.</li>
-      </ul>
-    </div>
-
-    <div class="col-sm-12 col-md-6 key-block">
-      <ul class="list-unstyled">
-        <h4 class="child-to-show"><strong>Boat Owner</strong></h4>
-        <li class='<%= image_path 'boat (1).png' %>'><span class="ico"></span>
-        Create an ad for free to rent your boat. Sailboats, inflatable boats, catamarans, all are welcome at LeBateau; Boat!</li>
-        <li class="icon-location-avenue"><span class="ico"></span>
-        Rent your boat, when you want and at the price you want. LeBateau; Boat helps you to make your boat profitable by allowing you to cover maintenance and usage expenses.</li>
-        <li class='<%= image_path 'icon.png' %>'><span class="ico"></span>
-        Optional full-risk insurance of up to eight million euros of coverage and secure payment platform for the deposit. Entrust us the rental of your sailboat, motor boat or catamaran.</li>
-      </ul>
-    </div>
-    <div class="clear"></div>
-  </div>
-</div>
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
-
-
-
-
