@@ -1,3 +1,5 @@
+
+
 .carousel-inner > .item {
   height: 60vh;
   border: black;
@@ -7,29 +9,35 @@
 }
 
 .banner {
-  height: 40vh;
+  height: 25vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
   margin-top: 30px;
   padding: 10px;
+  background-color: #0E8363;
+
+  p{
+    color: white;
+    text-shadow: 1px 1px black;
+  }
 }
+
+button, select, textarea {
+    color: black;
+  }
 
 #banner-content {
   text-align: center;
-  color: white;
-
-  p {
-
-  }
 }
+
 .form-control-label{
 border-color:black;
 }
 
 .formwave{
-   background-color: #0E8363;
+  background-color: #0E8363;
   color: #0E8363;
   background-image: url('https://kids.nationalgeographic.com/content/dam/kids/photos/articles/Nature/H-P/Habitats/Ocean/wave.ngsversion.1500050062134.adapt.1900.1.jpg');
   background-size: cover;
