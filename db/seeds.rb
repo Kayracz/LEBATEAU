@@ -20,12 +20,14 @@ end
 
 boat_type = %w(Yatch 'Sail boat' Canoe Launch Houseboat 'Jet boat' Dinghy)
 
+city = %w(Miami 'New York' Ibiza 'Buenos Aires' 'San Francisco' Port-Au-Prince Dakar 'Cape Town' 'Qui Nhon' Manila)
+
 User.all.each do |user|
-  20.times do |i|
+  10.times do |i|
     Boat.create(
       user: user,
       name: Faker::Artist.name,
-      location: Faker::Address.city,
+      location: city.sample,
       boat_type: boat_type.sample,
       size: i,
       capacity: (i * 10),
