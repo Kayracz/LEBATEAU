@@ -38,8 +38,8 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
-  margin-top: 30px;
-  padding: 10px;
+  margin-top: 10px;
+  padding: 20px;
   background-color: #0E8363;
 
   p{
@@ -64,10 +64,14 @@ button, select, textarea {
 .formwave{
   background-color: #0E8363;
   color: #0E8363;
-  background-image: url('https://kids.nationalgeographic.com/content/dam/kids/photos/articles/Nature/H-P/Habitats/Ocean/wave.ngsversion.1500050062134.adapt.1900.1.jpg');
+  // background-image: url('https://kids.nationalgeographic.com/content/dam/kids/photos/articles/Nature/H-P/Habitats/Ocean/wave.ngsversion.1500050062134.adapt.1900.1.jpg');
   background-size: cover;
   justify-content: center;
-  height: 100vh;
+  height: 110vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  // padding-bottom: 90px;
 }
 
 #boat-index {
@@ -75,7 +79,8 @@ button, select, textarea {
 }
 
 #bubble-container {
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 
@@ -91,10 +96,8 @@ button, select, textarea {
 // }
 
 
-// header img {
-//   height: 32px;
-//   padding-left: 24px;
-// }
+.bubble img {
+}
 
 // nav {
 //   text-align: right;
@@ -143,11 +146,11 @@ button, select, textarea {
 //   font-size: 15px;
 // }
 
-// .button:hover {
-//   color: black;
-//   background-color: white;
-//     /*-webkit-transtion: background-color 250ms linear;*/
-//   }
+.button:hover {
+  color: black;
+  background-color: white;
+    /*-webkit-transtion: background-color 250ms linear;*/
+  }
 
 //   .button {
 //     background-color: dimgray;
@@ -179,11 +182,11 @@ button, select, textarea {
 //   }
 
 
-//   .banner-content {
-//     h2 {
-//      color:white;
-//      font-size: 20px;
-//    }
+  // .banner-content {
+  //   h2 {
+  //    color:white;
+  //    font-size: 20px;
+  //  }
 //  }
 
 // // .item {
@@ -698,8 +701,6 @@ button, select, textarea {
 li{
   font-size: 12px;
 }
-
-
 }
 
 ul li {
