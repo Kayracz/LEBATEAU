@@ -1,0 +1,32 @@
+<div class="search-banner">
+  <!-- BUBBLE -->
+  <div class="section" id="searchfunction">
+    <span> <h3> <strong>O</strong>ur <strong>b</strong>oats </h3></span>
+  </div>
+  <!-- BANNER -->
+  <div class="banner">
+
+    <div class="container" id="bubble-container">
+      <div class="bubble">
+        <a href="">
+          <img src='<%= image_path 'boat (1).png' %>'/>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner content -->
+  <div id="banner-content">
+    <div>
+      <p>Search for your favourite boat!</p>
+    </div>
+    <div>
+      <%= form_with url: root_path, method: :get, local: true do |f| %>
+      <%= f.select :boat_type,
+      options_for_select(Boat::BOAT_TYPE.map { |value| [value, value]}, selected: params[:boat_type])
+      %>
+      <%= f.submit "Filter", id: "boat-search-submit" %>
+      <% end %>
+    </div>
+  </div>
+</div>

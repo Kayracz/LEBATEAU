@@ -1,11 +1,15 @@
 import 'mapbox-gl/dist/mapbox-gl.css'
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const mapElement = document.getElementById('map');
 
+
 if (mapElement) {
 
-  mapboxgl.accessToken = process.env.MAPBOX_API_KEY; // API key from `.env`
+  mapboxgl.accessToken = "pk.eyJ1IjoibWFyY3VzbG9pc2VhdTEiLCJhIjoiY2pvaW5ybDRtMGIyeTNrbGN1ZThhMWY0NCJ9.f7J7urgu5cA5stJq5Ll_NA"; // API key from `.env`
+
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/marcusloiseau1/cjoiqc46y1hqf2smmjg3t0wev'
@@ -32,3 +36,11 @@ if (mapElement) {
     map.fitBounds(bounds, { duration: 0, padding: 75 })
   }
 }
+
+if (mapElement) {
+  // [ ... ]
+  map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+  }));
+}
+

@@ -1,6 +1,7 @@
 class BoatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_boat, only: [:edit, :update, :destroy]
+
   def index
     if params[:boat_type]
       @boats = Boat.where(boat_type: params[:boat_type])
@@ -10,11 +11,12 @@ class BoatsController < ApplicationController
 
     @booking = Booking.new
 
-    @boats = Boat.where.not(latitude: nil, longitude: nil)
-    @markers = @boats.map do |boat|
+    @map_boats = Boat.where.not(latitude: nil, longitude: nil)
+    @markers = @map_boats.map do |boat|
       {
         lng: boat.longitude,
-        lat: boat.latitude
+        lat: boat.latitude,
+        infoWindow: { content: render_to_string(partial: "/boats/map_window", locals: { boat: boat }) }
       }
     end
   end
@@ -29,7 +31,7 @@ class BoatsController < ApplicationController
   end
 
   def create
-    @boat = Boat.new(boat_params) # should replace with .new(restaurant_params) to use the sanitised params, instead of the dirty one
+    @boat = Boat.new(boat_params)
     @boat.user = current_user
 
     if @boat.save
@@ -58,7 +60,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :boat_type, :size, :capacity, :price, :photo, :search) # this is called strong params, for security
+    params.require(:boat).permit(:name, :boat_type, :size, :capacity, :price, :description, :photo)
   end
 
   def set_boat
