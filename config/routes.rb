@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
   root to: 'boats#index'
   devise_for :users
 
