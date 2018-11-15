@@ -2,7 +2,12 @@ class BoatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_boat, only: [:edit, :update, :destroy]
   def index
-    @boats = Boat.all
+    if params[:boat_type]
+      @boats = Boat.where(boat_type: params[:boat_type])
+    else
+      @boats = Boat.all
+    end
+
     @booking = Booking.new
 
     @boats = Boat.where.not(latitude: nil, longitude: nil)
@@ -53,7 +58,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :boat_type, :size, :capacity, :price, :photo) # this is called strong params, for security
+    params.require(:boat).permit(:name, :boat_type, :size, :capacity, :price, :photo, :search) # this is called strong params, for security
   end
 
   def set_boat
