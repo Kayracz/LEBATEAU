@@ -1,6 +1,7 @@
 class BoatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_boat, only: [:edit, :update, :destroy]
+
   def index
     if params[:boat_type]
       @boats = Boat.where(boat_type: params[:boat_type])
@@ -10,8 +11,8 @@ class BoatsController < ApplicationController
 
     @booking = Booking.new
 
-    @boats = Boat.where.not(latitude: nil, longitude: nil)
-    @markers = @boats.map do |boat|
+    @map_boats = Boat.where.not(latitude: nil, longitude: nil)
+    @markers = @map_boats.map do |boat|
       {
         lng: boat.longitude,
         lat: boat.latitude

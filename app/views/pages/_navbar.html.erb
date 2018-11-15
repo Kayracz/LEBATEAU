@@ -6,11 +6,11 @@
   <% end %>
 
  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <% if current_user.present? %>
+ <div class="navbar-wagon-right hidden-xs hidden-sm">
+
     <%= link_to "Log In/Signup", new_user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Upload a boat", new_boat_path, class:"navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
+
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">

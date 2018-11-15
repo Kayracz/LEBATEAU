@@ -5,9 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Start seeding process..."
+puts "Destroy all old seeds"
+
 Boat.destroy_all
 User.destroy_all
 
+
+puts "Create new seeds"
 
 2.times do |i|
   User.create!(email: "#{i}-user@gmail.com", password: "123456")
@@ -31,3 +36,4 @@ User.all.each do |user|
   end
 end
 
+puts "Finished seeding process!"
