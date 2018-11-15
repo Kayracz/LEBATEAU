@@ -8,7 +8,6 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-
     <div class="item active">
       <img src='<%= image_path 'cloudboatcopy.jpg' %>'>
       <div class="carousel-caption">
@@ -28,9 +27,10 @@
  <div class="item">
   <img src='<%= image_path 'Aoceanboats.jpg' %>'>
   <div class="carousel-caption">
-   <h2>Have a Happy cruising!</h2>
- </div>
+    <h2>Have a Happy cruising!</h2>
+  </div>
 </div>
+
 </div>
 
 <!-- Left and right controls -->
@@ -54,22 +54,14 @@
       <p>Search for your favourite boat!</p>
     </div>
     <div>
-
-
-<%= form_with url: root_path, method: :get, local: true do |f| %>
-  <%= f.select :boat_type,
-    options_for_select(Boat::BOAT_TYPE.map { |value| [value, value]}, selected: params[:boat_type])
-  %>
-  <%= f.submit "Filter" %>
-<% end %>
-
-<a href="#"
+      <%= form_with url: root_path, method: :get, local: true do |f| %>
+      <%= f.select :boat_type,
+      options_for_select(Boat::BOAT_TYPE.map { |value| [value, value]}, selected: params[:boat_type])
+      %>
+      <%= f.submit "Filter" %>
+      <% end %>
     </div>
   </div>
-
-
-</div>
-</div>
 </div>
 
 <div class="section" id="searchfunction">
@@ -126,56 +118,15 @@
       <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-down-arrow-icon?wid=15&fmt=png-alpha&resMode=sharp2" alt="live-chat-down-arrow" class="live-chat-arrow live-chat-transition live-chat-down-arrow" />
 
     </h4>
-
   </div>
-
-  <p><strong>Need help?</strong><br>Connect with our LeBateau staff and have your questions answered!</p>
-
-  <a href="#" id="chat-button" class="live-chat-galaxie">Chat Now</a>
-
 </div>
 
+<div class="help1">
 
-<!-- MAIN CONTAINER -->
-<div>
-  <!-- OWNER BOATS -->
-  <div>
-    <!-- CARDS -->
-    <!-- FIRST CARD -->
-    <div>
-      <i></i>
-      <p></p>
-    </div>
-    <!-- SECOND CARD -->
-    <div>
-      <i></i>
-      <p></p>
-    </div>
-    <!-- THIRD CARD -->
-    <div>
-      <i></i>
-      <p></p>
-    </div>
-  </div>
-  <!-- LESSEE -->
-  <div>
-    <!-- CARDS -->
-    <!-- FIRST CARD -->
-    <div>
-      <i></i>
-      <p></p>
-    </div>
-    <!-- SECOND CARD -->
-    <div>
-      <i></i>
-      <p></p>
-    </div>
-    <!-- THIRD CARD -->
-    <div>
-      <i></i>
-      <p></p>
-    </div>
-  </div>
+<p><strong>Need help?</strong><br>Connect with our LeBateau staff and have your questions answered!</p>
+
+<a href="#" id="chat-button" class="live-chat-galaxie">Chat Now</a>
+
 </div>
 
 
@@ -210,9 +161,6 @@
       </ul>
     </div>
     <div class="clear"></div>
-    <div>
-
-    </div>
   </div>
 </div>
 
@@ -222,10 +170,7 @@
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
 ></div>
-</div>
 
 
-<!-- footer
-<%= render "pages/footer" %>
--->
+
 

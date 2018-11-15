@@ -11,11 +11,12 @@ class BoatsController < ApplicationController
 
     @booking = Booking.new
 
-    @boats = Boat.where.not(latitude: nil, longitude: nil)
-    @markers = @boats.map do |boat|
+    @map_boats = Boat.where.not(latitude: nil, longitude: nil)
+    @markers = @map_boats.map do |boat|
       {
         lng: boat.longitude,
-        lat: boat.latitude
+        lat: boat.latitude,
+        infoWindow: { content: render_to_string(partial: "/boats/map_window", locals: { boat: boat }) }
       }
     end
   end
