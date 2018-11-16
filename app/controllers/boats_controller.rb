@@ -3,10 +3,10 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:edit, :update, :destroy]
 
   def index
-    if params[:boat_type]
-      @boats = Boat.where(boat_type: params[:boat_type])
-    else
+    if params[:boat_type] == "All" || params[:boat_type].nil?
       @boats = Boat.all
+    else
+      @boats = Boat.where(boat_type: params[:boat_type])
     end
 
     @booking = Booking.new
@@ -18,6 +18,10 @@ class BoatsController < ApplicationController
         lat: boat.latitude,
         infoWindow: { content: render_to_string(partial: "/boats/map_window", locals: { boat: boat }) }
       }
+    end
+    respond_to do |format|
+      format.js
+      format.html
     end
   end
 

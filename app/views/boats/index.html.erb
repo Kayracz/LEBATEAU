@@ -7,63 +7,35 @@
 <!-- BOATS -->
 <div class="container-fluid">
   <div class="row">
-      <!-- CARDS -->
+    <!-- CARDS -->
     <div class="col-xs-12 col-sm-7 boats-cards">
-      <!-- IF THERE IS NO BOATS -->
-      <% if @boats.empty? %>
-        <div class='boats-taken text-center'>
-          <p>Sorry, all boats for this category are taken!</p>
-          <%= image_tag("titanic")%>
-        </div>
-      <% end %>
-      <!-- IF THERE -->
-      <% @boats.each do |boat| %>
-        <%= link_to boat_path(boat) do %>
-          <% if boat.photo.present? %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo %>');">
-          <% else %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_tag("pyyi0a6yphaudutusmcr")%>');">
-          <% end %>
-            <div class="card-description">
-              <h2><%= boat.name %></h2>
-              <p><%= boat.boat_type %></p>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="hidden-xs col-sm-5" style="padding: 0;">
-      <!-- MAP -->
-      <div
-      id="map"
-      style="width: 100%;
-      height: 60vh;"
-      data-markers="<%= @markers.to_json %>"
-      ></div>
+<!--       <div class="boats-cards"> -->
+        <%= render "cards", boats: @boats %>  <!-- to the partial we need to pass in a hash -->
+<!--       </div> -->
     </div>
   </div>
-</div>
 
-<div id="live-chat" class="live-chat-transition">
+  <div id="live-chat" class="live-chat-transition">
 
-  <div id="chat-label" class="live-chat-transition">
+    <div id="chat-label" class="live-chat-transition">
 
-    <h4 class="live-chat-galaxie live-chat-transition">
+      <h4 class="live-chat-galaxie live-chat-transition">
 
-      Live Chat
+        Live Chat
 
-      <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-up-arrow-icon?wid=15&fmt=png-alpha&op_sharpen=1&resMode=sharp2" alt="live-chat-up-arrow" class="live-chat-arrow live-chat-transition live-chat-up-arrow" />
+        <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-up-arrow-icon?wid=15&fmt=png-alpha&op_sharpen=1&resMode=sharp2" alt="live-chat-up-arrow" class="live-chat-arrow live-chat-transition live-chat-up-arrow" />
 
-      <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-down-arrow-icon?wid=15&fmt=png-alpha&resMode=sharp2" alt="live-chat-down-arrow" class="live-chat-arrow live-chat-transition live-chat-down-arrow" />
+        <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-down-arrow-icon?wid=15&fmt=png-alpha&resMode=sharp2" alt="live-chat-down-arrow" class="live-chat-arrow live-chat-transition live-chat-down-arrow" />
 
-    </h4>
+      </h4>
+
+    </div>
+
+    <p><strong>Need help?</strong><br>Connect with our LeBateau staff and have your questions answered!</p>
+
+    <a href="#" id="chat-button" class="live-chat-galaxie">Chat Now</a>
 
   </div>
-
-  <p><strong>Need help?</strong><br>Connect with our LeBateau staff and have your questions answered!</p>
-
-  <a href="#" id="chat-button" class="live-chat-galaxie">Chat Now</a>
-
 </div>
 
 

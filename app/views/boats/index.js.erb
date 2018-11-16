@@ -1,0 +1,8 @@
+// console.log("Hello world")
+
+var cards = document.querySelector(".boats-cards")
+
+cards.innerHTML = ("<%= j render "boats/cards", boats: @boats %>")
+
+// @boats comes from index method in boats controller
+// need to pass as a hash to the partial
