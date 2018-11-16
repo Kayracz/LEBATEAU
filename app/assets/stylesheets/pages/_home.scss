@@ -79,10 +79,11 @@ button, select, textarea {
   background-color: #0E8363;
   color: #0E8363;
   // background-image: url('https://kids.nationalgeographic.com/content/dam/kids/photos/articles/Nature/H-P/Habitats/Ocean/wave.ngsversion.1500050062134.adapt.1900.1.jpg');
-  background-size: cover;
+  display: flex;
+  // background-size: cover;
   justify-content: center;
   height: 110vh;
-  padding-top: 10px;
+  padding-top: 35px;
   padding-bottom: 10px;
   font-size: 15px;
   // padding-bottom: 90px;
