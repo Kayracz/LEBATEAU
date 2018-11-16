@@ -8,7 +8,8 @@ const mapElement = document.getElementById('map');
 
 if (mapElement) {
 
-  mapboxgl.accessToken = "pk.eyJ1IjoibWFyY3VzbG9pc2VhdTEiLCJhIjoiY2pvaW5ybDRtMGIyeTNrbGN1ZThhMWY0NCJ9.f7J7urgu5cA5stJq5Ll_NA"; // API key from `.env`
+  mapboxgl.accessToken = process.env.MAPBOX_API_KEY // API key from `.env`
+
 
   const map = new mapboxgl.Map({
     container: 'map',
