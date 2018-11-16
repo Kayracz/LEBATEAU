@@ -21,10 +21,10 @@
       <p>Search for your favourite boat!</p>
     </div>
     <div>
-      <%= form_with url: root_path, method: :get, local: true do |f| %>
-      <%= f.select :boat_type,
-      options_for_select(Boat::BOAT_TYPE.map { |value| [value, value]}, selected: params[:boat_type])
-      %>
+      <%= form_with url: root_path, method: :get, remote: true do |f| %>
+      <% options = options_for_select(["All"] + Boat::BOAT_TYPE.map { |value| [value, value]}) %>
+      <%= f.select :boat_type, options, selected: params[:boat_type] %>
+      <%#= raise %>
       <%= f.submit "Filter", id: "boat-search-submit" %>
       <% end %>
     </div>
