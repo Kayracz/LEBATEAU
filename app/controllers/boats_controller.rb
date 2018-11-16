@@ -5,13 +5,16 @@ class BoatsController < ApplicationController
   def index
     if params[:boat_type] == "All" || params[:boat_type].nil?
       @boats = Boat.all
+      @boats = Boat.where.not(user_id: current_user) if current_user.present?
     else
       @boats = Boat.where(boat_type: params[:boat_type])
+      @boats = Boat.where(boat_type: params[:boat_type]).where.not(user_id: current_user) if current_user.present?
     end
 
     @booking = Booking.new
 
     @map_boats = Boat.where.not(latitude: nil, longitude: nil)
+    @map_boats = Boat.where.not(latitude: nil, longitude: nil).where.not(user_id: current_user) if current_user.present?
     @markers = @map_boats.map do |boat|
       {
         lng: boat.longitude,

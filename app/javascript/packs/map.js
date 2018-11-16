@@ -11,6 +11,8 @@ if (mapElement) {
   mapboxgl.accessToken = process.env.MAPBOX_API_KEY // API key from `.env`
 
 
+
+
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/marcusloiseau1/cjoiqc46y1hqf2smmjg3t0wev'
