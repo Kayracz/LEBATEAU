@@ -134,6 +134,7 @@ button, select, textarea {
     padding: 10px 15px;
     text-decoration: none;
     color: white;
+    width: 50%;
   }
   a:hover {
     color: white;
@@ -145,8 +146,7 @@ button, select, textarea {
 .card {
   background-size: cover;
   background-position: center;
-  width: 235px;
-  height: 140px;
+  height: 160px;
   border-radius: 3px;
   padding: 10px;
   position: relative;

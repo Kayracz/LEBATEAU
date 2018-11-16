@@ -4,7 +4,7 @@ class Boat < ApplicationRecord
   belongs_to :user
   has_many :bookings
 
-  BOAT_TYPE = %w(All Yatch Sailboat Canoe Launch Houseboat Jetboat Uboat)
+  BOAT_TYPE = %w(Yatch Sailboat Canoe Launch Houseboat Jetboat Uboat)
 
   has_many :rentee_users, through: :bookings, source: :user
 
