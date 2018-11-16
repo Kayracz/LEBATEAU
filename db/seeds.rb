@@ -27,14 +27,15 @@ city = %w(Miami 'New York' Ibiza 'Buenos Aires' 'San Francisco' Port-Au-Prince D
 User.all.each do |user|
 
   25.times do |i|
+    i += 1
     Boat.create(
       user: user,
       name: Faker::Artist.name,
       location: city.sample,
       boat_type: boat_type.sample,
       size: (i * 5),
-      capacity: (i * 10),
-      price:  (i * 20),
+      capacity: (i * 5),
+      price:  (i * 10),
       description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quae, consequuntur nobis voluptatibus sunt est laborum tenetur harum molestiae consequatur, velit nemo. Optio reprehenderit ratione dolor ex sint natus iste.",
       remote_photo_url: images[i]
     )
