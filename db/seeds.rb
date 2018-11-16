@@ -22,7 +22,7 @@ end
 
 boat_type = %w(Yatch 'Sail boat' Canoe Launch Houseboat 'Jet boat' Dinghy)
 
-city = %w(Miami Ibiza Dakar Manila Mumbai Amsterdam Venice Lisbon Dakhla Ducos Noord Sydney Mumbai Nuuk Cancun Cartagena Montevideo Casablanca Lima)
+city = %w(Seattle Miami Ibiza Dakar Manila Mumbai Amsterdam Venice Lisbon Dakhla Ducos Noord Sydney Mumbai Nuuk Cancun Cartagena Montevideo Casablanca Lima)
 
 User.all.each do |user|
 
@@ -34,9 +34,9 @@ User.all.each do |user|
       location: city.sample,
       boat_type: boat_type.sample,
       size: (i * 5),
+      description: Faker::MostInterestingManInTheWorld.quote,
       capacity: (i * 5),
       price:  (i * 10),
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quae, consequuntur nobis voluptatibus sunt est laborum tenetur harum molestiae consequatur, velit nemo. Optio reprehenderit ratione dolor ex sint natus iste.",
       remote_photo_url: images[i]
     )
   end

@@ -20,6 +20,8 @@ if (mapElement) {
   markers.forEach((marker) => {
     new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
+      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+      .setHTML(marker.infoWindow.content))
       .addTo(map);
   })
 
