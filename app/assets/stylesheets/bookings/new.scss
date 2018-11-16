@@ -3,9 +3,11 @@
   color: #0E8363;
   background-image: url('https://kids.nationalgeographic.com/content/dam/kids/photos/articles/Nature/H-P/Habitats/Ocean/wave.ngsversion.1500050062134.adapt.1900.1.jpg');
   background-size: cover;
+  display:flex;
   justify-content: center;
   height: 100vh;
   border-color: black;
+   text-shadow: 1px 1px black;
 }
 
 .banner-content1 {

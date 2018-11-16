@@ -4,7 +4,8 @@
 
 
 #tick-Nick {
-  height: 120px;
+  height: 130px;
+  margin-bottom: 10px;
 }
 
 // p {
@@ -23,10 +24,14 @@
 .wrapper-Nick {
   // background-color: #0E8363;
   text-align: center;
-  background-color: rgb(220, 245, 247);
+  background-color: white;
   color: #0E8363;
   // background-image: url('assets/images/ocean.jpg');
   background-size: cover;
   justify-content: center;
-  height: 100vh
+  height: 100vh;
+  display: flex;
+  padding-top: 80px;
+   border-top: 1px solid #0E8363;
+  margin-top: 0px;
 }
