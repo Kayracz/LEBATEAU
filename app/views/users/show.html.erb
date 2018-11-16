@@ -1,8 +1,8 @@
 <div class="wrapper">
 
-  <div class="container-fluid">
+  <div class="container">
     <h2>Profile</h2>
-    <div>
+    <div class="flex-left">
       <!-- <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan"> -->
       <% if @user.photo.present? %>
         <img class="avatar-large" src=<%= cl_image_path @user.photo %>>
