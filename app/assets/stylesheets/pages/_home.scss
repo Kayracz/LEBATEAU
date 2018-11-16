@@ -1,4 +1,11 @@
 
+.table1{
+  font-size: 10px;
+}
+
+.title2{
+  color:#0E8363;
+}
 .names {
   margin-top: 40px;
   margin-bottom:40px;
@@ -14,9 +21,10 @@ font-size: 20px;
 
 
 .avatar-large {
-    background-size: 60px;
-    width: 50px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    border-color: #0E8363;
 }
 
 
@@ -99,7 +107,7 @@ button, select, textarea {
 
 .formwave{
   background-color: #0E8363;
-  color: #0E8363;
+  color: white;
   // background-image: url('https://kids.nationalgeographic.com/content/dam/kids/photos/articles/Nature/H-P/Habitats/Ocean/wave.ngsversion.1500050062134.adapt.1900.1.jpg');
   display: flex;
   // background-size: cover;
@@ -150,9 +158,10 @@ button, select, textarea {
   border-radius: 3px;
   padding: 10px;
   position: relative;
+  border-radius: 20px;
   &:hover {
     // TRANSITION
-    box-shadow: 2px 2px 3px black;
+    box-shadow: 2px 2px 4px black;
   }
 }
 
