@@ -5,8 +5,11 @@
     <div>
       <!-- <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan"> -->
       <% if @user.photo.present? %>
-      <img class="avatar-large" src=<%= cl_image_path @user.photo, height: 300, width: 400, crop: :fill %>>
+        <img class="avatar-large" src=<%= cl_image_path @user.photo %>>
+      <% else %>
+        <img class="avatar-large" src=<%= image_path 'profile.png' %>>
       <% end %>
+
       <div>
         <p>First name: <%= @user.first_name %></p>
         <p>Last name:  <%= @user.last_name %></p>
@@ -45,7 +48,9 @@
             <td><%= booking.end_date.change({ hour: 17, min: 0}) %></td>
             <td><%= (booking.end_date.day - booking.start_date.day).to_i*booking.boat.price %></td>
             <td>Confirmed</td>
-            <td><a href="#">Cancel booking</a></td>
+            <td><%= link_to "Cancel booking", booking_path(booking),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></td>
           </tr>
          <% end %>
        </tbody>
@@ -102,7 +107,9 @@
             <td><%= booking.end_date.change({ hour: 17, min: 0}) %></td>
             <td><%= (booking.end_date.day - booking.start_date.day).to_i*booking.boat.price %></td>
             <td>Confirmed</td>
-            <td><a href="#">Cancel booking</a></td>
+            <td><%= link_to "Cancel booking", booking_path(booking),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></td>
           </tr>
          <% end %>
          <% end %>

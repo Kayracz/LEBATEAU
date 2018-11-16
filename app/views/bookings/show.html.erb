@@ -15,6 +15,9 @@
     <p class='green-Nick' >End date:</p>
     <p class='black-Nick'><%= @booking.end_date.change({ hour: 17, min: 0}) %></p>
 
+    <p class='green-Nick' >Total price (USD):</p>
+    <p class='black-Nick'><%= (@booking.end_date.day - @booking.start_date.day).to_i*@booking.boat.price %></p>
+
     <!-- <p><%= link_to "Back to home", root_path %></p> -->
     <a class="btn btn-primary" href= <%= boat_path(@booking.boat) %> >See boat details</a>
     <!-- <a class="btn btn-primary" href= <%= root_path %> >Back to home</a> -->
