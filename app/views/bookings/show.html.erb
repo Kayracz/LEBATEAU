@@ -10,10 +10,10 @@
     <p class='black-Nick'><%= @booking.boat.name %></p>
 
     <p class='green-Nick' >Start date:</p>
-    <p class='black-Nick'><%= @booking.start_date.change({ hour: 9, min: 0}) %></p>
+    <p class='black-Nick'><%= @booking.start_date.change({ hour: 9, min: 0}).strftime("%A, %d %b %Y %l:%M %p") %></p>
 
     <p class='green-Nick' >End date:</p>
-    <p class='black-Nick'><%= @booking.end_date.change({ hour: 17, min: 0}) %></p>
+    <p class='black-Nick'><%= @booking.end_date.change({ hour: 17, min: 0}).strftime("%A, %d %b %Y %l:%M %p") %></p>
 
     <p class='green-Nick' >Total price (USD):</p>
     <p class='black-Nick'><%= (@booking.end_date.day - @booking.start_date.day).to_i*@booking.boat.price %></p>
