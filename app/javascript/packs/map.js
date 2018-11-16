@@ -35,11 +35,7 @@ if (mapElement) {
     });
     map.fitBounds(bounds, { duration: 0, padding: 75 })
   }
-}
-
-if (mapElement) {
-  // [ ... ]
-  map.addControl(new MapboxGeocoder({
+   map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken
   }));
 }

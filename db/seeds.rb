@@ -22,7 +22,7 @@ end
 
 boat_type = %w(Yatch 'Sail boat' Canoe Launch Houseboat 'Jet boat' Dinghy)
 
-city = %w(Miami 'New York' Ibiza 'Buenos Aires' 'San Francisco' Port-Au-Prince Dakar 'Cape Town' 'Qui Nhon' Manila)
+city = %w(Miami Ibiza Dakar Manila Mumbai Amsterdam Venice Lisbon Dakhla Ducos Noord Sydney Mumbai Nuuk Cancun Cartagena Montevideo Casablanca Lima)
 
 User.all.each do |user|
 
