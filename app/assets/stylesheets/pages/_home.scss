@@ -141,11 +141,13 @@ button, select, textarea {
   }
 }
 
+
 .card {
   background-size: cover;
   background-position: center;
-  width: 200px;
-  height: 100px;
+  width: 235px;
+  height: 140px;
+  border-radius: 3px;
   padding: 10px;
   position: relative;
   &:hover {
