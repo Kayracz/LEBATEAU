@@ -26,6 +26,7 @@ class BoatsController < ApplicationController
       format.js
       format.html
     end
+    @user = current_user
   end
 
   def show
